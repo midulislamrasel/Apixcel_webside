@@ -64,9 +64,6 @@ export default function App() {
     setErrors(errors);
     if (Object.keys(errors).length === 0) {
       console.log("triggered!");
-      const res = await fetch("/api");
-
-      const datat = await res.json();
     }
   };
 
