@@ -49,8 +49,17 @@ export default function App() {
     }
     if (data.message === "") {
       errors.message = "Message is required";
+
       // setErrors(errors);
       // return;
+    }
+    if (data.message !== "") {
+      if (data.message.length < 120) {
+        errors.message = "Minimum 120 Words required";
+      }
+      if (data.message.length > 251) {
+        errors.message = "Message should be maximum 250 words";
+      }
     }
     setErrors(errors);
     if (Object.keys(errors).length === 0) {
